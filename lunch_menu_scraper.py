@@ -1,7 +1,12 @@
-import requests
-from bs4 import BeautifulSoup
+"""
+This script scrapes the lunch menu PDF file from the Joplin Schools Nutrition Services
+website and downloads it to your local machine.
+"""
+
 import urllib
 from urllib.parse import urljoin
+import requests
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -29,7 +34,9 @@ print('Here are all the menu links on the page:')
 
 # Loop through the links and find the one that contains the word you're looking for
 for link in links:
-    if 'Middle' in link.get('href') and '.pdf' in link.get('href') and 'Menu' in link.get('href') and ('2023' in link.get('href') or '2024' in link.get('href')):
+    if 'Middle' in link.get('href') and '.pdf' in link.get('href') and \
+        'Menu' in link.get('href') and ('2023' in link.get('href') or '2024' in link.get('href')):
+
         print(link)
         print('\n')
 
@@ -54,7 +61,7 @@ for link in links:
         except urllib.error.HTTPError as e:
             print('Error downloading file: ' + str(e.code))
             print('Response text: ' + e.read().decode('utf-8'))
-            exit(1)
+            sys.exit(1)
 
         # Exit the loop
         # break
