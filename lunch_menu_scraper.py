@@ -5,10 +5,10 @@ website and downloads it to your local machine.
 
 import urllib
 from urllib.parse import urljoin
+import sys
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import sys
 
 # Set up the Chrome driver with options to run headless
 options = Options()
