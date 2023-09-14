@@ -1,5 +1,7 @@
 # Lunch Menu Scraper
 
+[![Pylint](https://github.com/Kenny-MWI/LunchMenuScraper/actions/workflows/pylint.yml/badge.svg)](https://github.com/Kenny-MWI/LunchMenuScraper/actions/workflows/pylint.yml)
+
 This script scrapes the lunch menu PDF file from the Joplin Schools Nutrition Services website and downloads it to your local machine. This site uses a CDN which attempts to prevent automated scraping which may break this script. Some tweaks may be required to make it work.
 
 ## Installation
